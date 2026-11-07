@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="uk" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="FastFix — онлайн-оцінка вартості ремонту техніки"
+    />
+    <title>FastFix — онлайн-оцінка ремонту</title>
+    <link rel="icon" href="assets/icons/logo-bolt.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/app.js" defer></script>
+  </head>
+  <body
+    class="m-0 overflow-x-hidden bg-fastfix-surface font-inter text-fastfix-text antialiased"
+  >
+    <header
+      class="fixed inset-x-0 top-0 z-50 h-[145px] bg-fastfix-dark text-white md:h-[74px]"
+    >
+      <div
+        class="mx-auto flex h-16 w-[calc(100%-40px)] max-w-content items-center justify-between md:h-[74px] md:w-[calc(100%-64px)] xl:w-[calc(100%-120px)]"
+      >
+        <a
+          class="inline-flex items-center gap-2 text-xs font-bold focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-fastfix-cyan md:gap-3 md:text-[23px]"
+          href="index.html"
+          aria-label="FastFix — головна"
+          ><span class="logo-mark" aria-hidden="true"
+            ><img src="assets/icons/logo-frame.svg" alt="" /><img
+              src="assets/icons/logo-bolt.svg"
+              alt="" /></span
+          >FastFix</a
+        >
+        <nav
+          class="hidden items-center gap-4 text-xs lg:flex xl:gap-[30px] xl:text-[13px]"
+          aria-label="Основна навігація"
+        >
+          <a
+            class="transition-colors hover:text-fastfix-cyan focus-visible:outline focus-visible:outline-2 focus-visible:outline-fastfix-cyan"
+            aria-current="page"
+            href="index.html"
+            >Головна</a
+          ><a
+            class="transition-colors hover:text-fastfix-cyan focus-visible:outline focus-visible:outline-2 focus-visible:outline-fastfix-cyan"
+            href="technology.html"
+            >Техніка</a
+          ><a
+            class="transition-colors hover:text-fastfix-cyan focus-visible:outline focus-visible:outline-2 focus-visible:outline-fastfix-cyan"
+            href="calculator.html"
+            >Калькулятор</a
+          ><a
+            class="transition-colors hover:text-fastfix-cyan focus-visible:outline focus-visible:outline-2 focus-visible:outline-fastfix-cyan"
+            href="request.html"
+            >Оформлення заявки</a
+          ><a
+            class="transition-colors hover:text-fastfix-cyan focus-visible:outline focus-visible:outline-2 focus-visible:outline-fastfix-cyan"
+            href="account.html"
+            >Особистий кабінет</a
+          ><a
+            class="transition-colors hover:text-fastfix-cyan focus-visible:outline focus-visible:outline-2 focus-visible:outline-fastfix-cyan"
+            href="about.html"
+            >Про нас</a
+          >
+        </nav>
+        <details class="relative lg:hidden">
+          <summary
+            class="flex h-11 w-11 cursor-pointer list-none flex-col items-center justify-center gap-1 focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-fastfix-cyan"
+            aria-label="Відкрити меню"
+          >
+            <span class="h-0.5 w-[18px] bg-white"></span
+            ><span class="h-0.5 w-[18px] bg-white"></span
+            ><span class="h-0.5 w-[18px] bg-white"></span>
+          </summary>
+          <nav
+            class="absolute right-0 top-12 grid w-[220px] gap-1 rounded-md border border-slate-700 bg-fastfix-dark p-3 shadow-xl"
+            aria-label="Мобільна навігація"
+          >
+            <a
+              class="mobile-transition-colors hover:text-fastfix-cyan focus-visible:outline focus-visible:outline-2 focus-visible:outline-fastfix-cyan"
+              href="index.html"
+              >Головна</a
+            ><a
+              class="mobile-transition-colors hover:text-fastfix-cyan focus-visible:outline focus-visible:outline-2 focus-visible:outline-fastfix-cyan"
+              href="technology.html"
+              >Техніка</a
+            ><a
+              class="mobile-transition-colors hover:text-fastfix-cyan focus-visible:outline focus-visible:outline-2 focus-visible:outline-fastfix-cyan"
+              href="calculator.html"
+              >Калькулятор</a
+            ><a
+              class="mobile-transition-colors hover:text-fastfix-cyan focus-visible:outline focus-visible:outline-2 focus-visible:outline-fastfix-cyan"
+              href="request.html"
+              >Оформлення заявки</a
+            ><a
+              class="mobile-transition-colors hover:text-fastfix-cyan focus-visible:outline focus-visible:outline-2 focus-visible:outline-fastfix-cyan"
+              href="account.html"
+              >Особистий кабінет</a
+            ><a
+              class="mobile-transition-colors hover:text-fastfix-cyan focus-visible:outline focus-visible:outline-2 focus-visible:outline-fastfix-cyan"
+              href="about.html"
+              >Про нас</a
+            >
+          </nav>
+        </details>
+      </div>
+      <div class="mx-auto w-[calc(100%-40px)] pt-2 md:hidden">
+        <p class="text-[23px] font-bold" aria-hidden="true">Головна</p>
+        <p class="mt-2 text-xs text-[#C9D4E3]">Онлайн-оцінка ремонту техніки</p>
+      </div>
+    </header>
+
+    <main>
+      <section
+        class="bg-fastfix-dark pt-[145px] text-white md:pt-[74px]"
+        aria-labelledby="hero-title"
+      >
+        <div
+          class="mx-auto flex w-full max-w-content flex-col md:h-[420px] md:w-[calc(100%-64px)] md:flex-row xl:w-[calc(100%-120px)]"
+        >
+          <div
+            class="contents md:flex md:w-[45%] md:flex-col md:justify-center md:pr-9 xl:w-[38%]"
+          >
+            <p
+              class="order-1 mx-5 mb-3 mt-3 self-start rounded bg-fastfix-cyan px-2 py-1 text-xs font-bold uppercase text-fastfix-dark md:mx-0 md:mb-[18px] md:mt-0 md:px-[17px] md:py-[7px] md:text-[11px]"
+            >
+              Онлайн-оцінка ремонту
+            </p>
+            <h1
+              id="hero-title"
+              class="order-2 mx-5 mb-[17px] max-w-[500px] text-xl font-bold leading-tight md:mx-0 md:mb-8 md:text-[34px] xl:text-[39px]"
+            >
+              Твій гаджет зламався. Ми знаємо, скільки коштує ремонт.
+            </h1>
+            <p
+              class="order-3 mx-5 mb-5 max-w-[520px] text-xs text-[#C9D4E3] md:mx-0 md:mb-[34px] md:text-[15px]"
+            >
+              Оціни ремонт смартфона, ноутбука, комп’ютера чи навушників онлайн.
+              Зрозуміла ціна та зручне оформлення заявки.
+            </p>
+            <a
+              class="inline-flex min-h-11 items-center justify-between rounded-md bg-[#F97316] px-4 font-bold text-white transition hover:-translate-y-px hover:bg-[#EA580C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fastfix-cyan active:translate-y-0 active:bg-[#C2410C] disabled:pointer-events-none disabled:opacity-50 order-5 w-full rounded-none md:order-4 md:w-[253px] md:rounded-md"
+              href="calculator.html"
+              >Розрахувати вартість <span aria-hidden="true">›</span></a
+            >
+          </div>
+          <div
+            class="hero-image order-4 h-[217px] w-full md:order-5 md:h-full md:w-[55%] xl:w-[62%]"
+            role="img"
+            aria-label="Діагностика та ремонт смартфона у сучасній майстерні"
+          ></div>
+        </div>
+      </section>
+
+      <section class="pt-4 md:pt-5" aria-labelledby="steps-title">
+        <div
+          class="mx-auto w-[calc(100%-40px)] max-w-content md:w-[calc(100%-64px)] xl:w-[calc(100%-120px)]"
+        >
+          <header
+            class="mb-[14px] md:mb-8 [&_h2]:mb-1 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:leading-tight md:[&_h2]:mb-1.5 md:[&_h2]:text-[28px] [&_p]:text-xs [&_p]:text-[#5B6B82] md:[&_p]:text-sm md:[&_p]:text-fastfix-muted"
+          >
+            <h2 id="steps-title">Як це працює</h2>
+            <p>Три прості кроки від несправності до попередньої оцінки.</p>
+          </header>
+          <div
+            class="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-6 lg:grid-cols-3"
+          >
+            <article
+              class="rounded-md border border-fastfix-border bg-white p-3 shadow-card transition hover:-translate-y-0.5 hover:shadow-md md:min-h-[166px] md:rounded-[10px] md:p-5 [&_h3]:mb-1 [&_h3]:mt-2 [&_h3]:text-[13px] [&_h3]:font-bold md:[&_h3]:mb-1.5 md:[&_h3]:mt-[15px] md:[&_h3]:text-[17px] [&_p]:text-xs [&_p]:text-[#5B6B82] md:[&_p]:text-[13px] md:[&_p]:text-fastfix-muted"
+            >
+              <span
+                class="flex h-[30px] w-[30px] items-center justify-center rounded-md bg-[#EDF4FF] md:h-[39px] md:w-[39px] [&_img]:h-[18px] [&_img]:w-[18px] md:[&_img]:h-[22px] md:[&_img]:w-[22px]"
+                ><img src="assets/icons/icon_photo.svg" alt=""
+              /></span>
+              <h3>Завантаж фото</h3>
+              <p>Додай фотографію несправного пристрою.</p>
+            </article>
+            <article
+              class="rounded-md border border-fastfix-border bg-white p-3 shadow-card transition hover:-translate-y-0.5 hover:shadow-md md:min-h-[166px] md:rounded-[10px] md:p-5 [&_h3]:mb-1 [&_h3]:mt-2 [&_h3]:text-[13px] [&_h3]:font-bold md:[&_h3]:mb-1.5 md:[&_h3]:mt-[15px] md:[&_h3]:text-[17px] [&_p]:text-xs [&_p]:text-[#5B6B82] md:[&_p]:text-[13px] md:[&_p]:text-fastfix-muted"
+            >
+              <span
+                class="flex h-[30px] w-[30px] items-center justify-center rounded-md bg-[#EDF4FF] md:h-[39px] md:w-[39px] [&_img]:h-[18px] [&_img]:w-[18px] md:[&_img]:h-[22px] md:[&_img]:w-[22px]"
+                ><img src="assets/icons/icon_repair.svg" alt=""
+              /></span>
+              <h3>Опиши проблему</h3>
+              <p>Вкажи модель та симптоми несправності.</p>
+            </article>
+            <article
+              class="rounded-md border border-fastfix-border bg-white p-3 shadow-card transition hover:-translate-y-0.5 hover:shadow-md md:min-h-[166px] md:rounded-[10px] md:p-5 [&_h3]:mb-1 [&_h3]:mt-2 [&_h3]:text-[13px] [&_h3]:font-bold md:[&_h3]:mb-1.5 md:[&_h3]:mt-[15px] md:[&_h3]:text-[17px] [&_p]:text-xs [&_p]:text-[#5B6B82] md:[&_p]:text-[13px] md:[&_p]:text-fastfix-muted"
+            >
+              <span
+                class="flex h-[30px] w-[30px] items-center justify-center rounded-md bg-[#EDF4FF] md:h-[39px] md:w-[39px] [&_img]:h-[18px] [&_img]:w-[18px] md:[&_img]:h-[22px] md:[&_img]:w-[22px]"
+                ><img src="assets/icons/icon_price.svg" alt=""
+              /></span>
+              <h3>Отримай оцінку</h3>
+              <p>Переглянь попередній діапазон ціни.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="calculator"
+        class="pt-4 md:pt-5 scroll-mt-[155px] md:scroll-mt-20"
+        aria-labelledby="calculator-title"
+      >
+        <div
+          class="mx-auto w-[calc(100%-40px)] max-w-content md:w-[calc(100%-64px)] xl:w-[calc(100%-120px)]"
+        >
+          <header
+            class="mb-[14px] md:mb-8 [&_h2]:mb-1 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:leading-tight md:[&_h2]:mb-1.5 md:[&_h2]:text-[28px] [&_p]:text-xs [&_p]:text-[#5B6B82] md:[&_p]:text-sm md:[&_p]:text-fastfix-muted"
+          >
+            <h2 id="calculator-title">Розрахуй вартість ремонту зараз</h2>
+            <p>Вкажи категорію, бренд і модель пристрою.</p>
+          </header>
+          <form
+            id="landing-calculator"
+            class="flex flex-col gap-3 rounded-md p-2.5 md:grid md:grid-cols-2 md:gap-6 md:bg-fastfix-dark md:p-6 md:text-white lg:grid-cols-3 xl:gap-[34px]"
+            action="calculator.html"
+            method="get"
+          >
+            <label
+              class="flex flex-col gap-1.5 text-xs font-bold md:gap-2 md:text-[13px]"
+              >Категорія пристрою<select
+                class="h-11 w-full rounded-md border border-[#D2DCE8] bg-white px-3.5 text-fastfix-muted placeholder:text-fastfix-muted focus:border-fastfix-cyan focus:outline-none focus:ring-2 focus:ring-fastfix-cyan/40 md:h-[46px] md:border-0"
+                name="category"
+              >
+                <option value="phone">Смартфон</option>
+                <option value="laptop">Ноутбук</option>
+                <option value="computer">Комп’ютер</option>
+              </select></label
+            >
+            <label
+              class="flex flex-col gap-1.5 text-xs font-bold md:gap-2 md:text-[13px]"
+              >Бренд<select
+                class="h-11 w-full rounded-md border border-[#D2DCE8] bg-white px-3.5 text-fastfix-muted placeholder:text-fastfix-muted focus:border-fastfix-cyan focus:outline-none focus:ring-2 focus:ring-fastfix-cyan/40 md:h-[46px] md:border-0"
+                name="brand"
+              >
+                <option value="">Оберіть виробника</option>
+                <option>Apple</option>
+                <option>Samsung</option>
+              </select></label
+            >
+            <label
+              class="flex flex-col gap-1.5 text-xs font-bold md:gap-2 md:text-[13px]"
+              >Модель<input
+                class="h-11 w-full rounded-md border border-[#D2DCE8] bg-white px-3.5 text-fastfix-muted placeholder:text-fastfix-muted focus:border-fastfix-cyan focus:outline-none focus:ring-2 focus:ring-fastfix-cyan/40 md:h-[46px] md:border-0"
+                name="model"
+                type="text"
+                required
+                placeholder="Оберіть модель"
+            /></label>
+            <button
+              class="inline-flex min-h-11 items-center justify-between rounded-md bg-[#F97316] px-4 font-bold text-white transition hover:-translate-y-px hover:bg-[#EA580C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fastfix-cyan active:translate-y-0 active:bg-[#C2410C] disabled:pointer-events-none disabled:opacity-50 w-full md:w-[253px]"
+              type="submit"
+            >
+              Розрахувати вартість <span aria-hidden="true">›</span>
+            </button>
+            <output
+              id="landing-estimate"
+              class="hidden rounded-md border border-fastfix-cyan/40 bg-white p-4 text-fastfix-text md:col-span-2 lg:col-span-3"
+              aria-live="polite"
+            >
+              <span class="block text-xs text-fastfix-muted"
+                >Попередня оцінка</span
+              >
+              <strong
+                class="mt-1 block text-xl text-fastfix-primary"
+                data-estimate-price
+              ></strong>
+              <span
+                class="mt-1 block text-xs text-fastfix-muted"
+                data-estimate-term
+              ></span>
+              <a
+                class="mt-3 inline-flex font-bold text-fastfix-primary underline decoration-fastfix-cyan underline-offset-4"
+                href="request.html"
+                >Перейти до заявки</a
+              >
+            </output>
+          </form>
+        </div>
+      </section>
+
+      <section class="pt-4 md:pt-5" aria-labelledby="benefits-title">
+        <div
+          class="mx-auto w-[calc(100%-40px)] max-w-content md:w-[calc(100%-64px)] xl:w-[calc(100%-120px)]"
+        >
+          <header
+            class="mb-[14px] md:mb-8 [&_h2]:mb-1 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:leading-tight md:[&_h2]:mb-1.5 md:[&_h2]:text-[28px] [&_p]:text-xs [&_p]:text-[#5B6B82] md:[&_p]:text-sm md:[&_p]:text-fastfix-muted"
+          >
+            <h2 id="benefits-title">Чому обирають FastFix</h2>
+            <p>Зручний сервіс без зайвих складнощів.</p>
+          </header>
+          <div
+            class="grid grid-cols-1 gap-2 min-[360px]:grid-cols-2 md:gap-6 lg:grid-cols-4"
+          >
+            <article
+              class="rounded-md border border-fastfix-border bg-white p-3 shadow-card transition hover:-translate-y-0.5 hover:shadow-md md:min-h-[166px] md:rounded-[10px] md:p-5 [&_h3]:mb-1 [&_h3]:mt-2 [&_h3]:text-[13px] [&_h3]:font-bold md:[&_h3]:mb-1.5 md:[&_h3]:mt-[15px] md:[&_h3]:text-[17px] [&_p]:text-xs [&_p]:text-[#5B6B82] md:[&_p]:text-[13px] md:[&_p]:text-fastfix-muted"
+            >
+              <span
+                class="flex h-[30px] w-[30px] items-center justify-center rounded-md bg-[#EDF4FF] md:h-[39px] md:w-[39px] [&_img]:h-[18px] [&_img]:w-[18px] md:[&_img]:h-[22px] md:[&_img]:w-[22px]"
+                ><img src="assets/icons/icon_price.svg" alt=""
+              /></span>
+              <h3>Прозора оцінка</h3>
+              <p>Попередні витрати до початку ремонту.</p>
+            </article>
+            <article
+              class="rounded-md border border-fastfix-border bg-white p-3 shadow-card transition hover:-translate-y-0.5 hover:shadow-md md:min-h-[166px] md:rounded-[10px] md:p-5 [&_h3]:mb-1 [&_h3]:mt-2 [&_h3]:text-[13px] [&_h3]:font-bold md:[&_h3]:mb-1.5 md:[&_h3]:mt-[15px] md:[&_h3]:text-[17px] [&_p]:text-xs [&_p]:text-[#5B6B82] md:[&_p]:text-[13px] md:[&_p]:text-fastfix-muted"
+            >
+              <span
+                class="flex h-[30px] w-[30px] items-center justify-center rounded-md bg-[#EDF4FF] md:h-[39px] md:w-[39px] [&_img]:h-[18px] [&_img]:w-[18px] md:[&_img]:h-[22px] md:[&_img]:w-[22px]"
+                ><img src="assets/icons/icon_compare.svg" alt=""
+              /></span>
+              <h3>Зрозумілі кроки</h3>
+              <p>Простий процес подання заявки.</p>
+            </article>
+            <article
+              class="rounded-md border border-fastfix-border bg-white p-3 shadow-card transition hover:-translate-y-0.5 hover:shadow-md md:min-h-[166px] md:rounded-[10px] md:p-5 [&_h3]:mb-1 [&_h3]:mt-2 [&_h3]:text-[13px] [&_h3]:font-bold md:[&_h3]:mb-1.5 md:[&_h3]:mt-[15px] md:[&_h3]:text-[17px] [&_p]:text-xs [&_p]:text-[#5B6B82] md:[&_p]:text-[13px] md:[&_p]:text-fastfix-muted"
+            >
+              <span
+                class="flex h-[30px] w-[30px] items-center justify-center rounded-md bg-[#EDF4FF] md:h-[39px] md:w-[39px] [&_img]:h-[18px] [&_img]:w-[18px] md:[&_img]:h-[22px] md:[&_img]:w-[22px]"
+                ><img src="assets/icons/icon_request.svg" alt=""
+              /></span>
+              <h3>Контроль ремонту</h3>
+              <p>Статус замовлення в кабінеті.</p>
+            </article>
+            <article
+              class="rounded-md border border-fastfix-border bg-white p-3 shadow-card transition hover:-translate-y-0.5 hover:shadow-md md:min-h-[166px] md:rounded-[10px] md:p-5 [&_h3]:mb-1 [&_h3]:mt-2 [&_h3]:text-[13px] [&_h3]:font-bold md:[&_h3]:mb-1.5 md:[&_h3]:mt-[15px] md:[&_h3]:text-[17px] [&_p]:text-xs [&_p]:text-[#5B6B82] md:[&_p]:text-[13px] md:[&_p]:text-fastfix-muted"
+            >
+              <span
+                class="flex h-[30px] w-[30px] items-center justify-center rounded-md bg-[#EDF4FF] md:h-[39px] md:w-[39px] [&_img]:h-[18px] [&_img]:w-[18px] md:[&_img]:h-[22px] md:[&_img]:w-[22px]"
+                ><img src="assets/icons/icon_account.svg" alt=""
+              /></span>
+              <h3>Зручний запис</h3>
+              <p>Обирай комфортний спосіб передачі.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="pt-4 md:pt-5" aria-labelledby="comparison-title">
+        <div
+          class="mx-auto w-[calc(100%-40px)] max-w-content md:w-[calc(100%-64px)] xl:w-[calc(100%-120px)]"
+        >
+          <header
+            class="mb-[14px] md:mb-8 [&_h2]:mb-1 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:leading-tight md:[&_h2]:mb-1.5 md:[&_h2]:text-[28px] [&_p]:text-xs [&_p]:text-[#5B6B82] md:[&_p]:text-sm md:[&_p]:text-fastfix-muted"
+          >
+            <h2 id="comparison-title">Ремонт чи покупка?</h2>
+            <p>Порівняй доцільність ремонту та заміни техніки.</p>
+          </header>
+          <div
+            class="min-h-[85px] rounded-[10px] bg-white px-[13px] py-[17px] md:flex md:min-h-[120px] md:items-center md:justify-between md:px-[29px] md:py-[27px]"
+          >
+            <div class="flex flex-col gap-3 md:gap-4">
+              <strong class="text-xs text-fastfix-primary md:text-xl"
+                >Ремонт: 2 500 грн</strong
+              ><span class="text-xs font-bold md:text-lg"
+                >Новий пристрій: 15 000 грн</span
+              >
+            </div>
+            <strong class="hidden text-xl text-fastfix-primary md:block"
+              >Орієнтовна економія: 12 500 грн</strong
+            >
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="repairs"
+        class="pt-4 md:pt-5 scroll-mt-[155px] md:scroll-mt-20"
+        aria-labelledby="repairs-title"
+      >
+        <div
+          class="mx-auto w-[calc(100%-40px)] max-w-content md:w-[calc(100%-64px)] xl:w-[calc(100%-120px)]"
+        >
+          <header
+            class="mb-[14px] md:mb-8 [&_h2]:mb-1 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:leading-tight md:[&_h2]:mb-1.5 md:[&_h2]:text-[28px] [&_p]:text-xs [&_p]:text-[#5B6B82] md:[&_p]:text-sm md:[&_p]:text-fastfix-muted"
+          >
+            <h2 id="repairs-title">Що ми ремонтуємо</h2>
+            <p>
+              Від смартфонів і навушників до комп’ютерів та побутової техніки.
+            </p>
+          </header>
+          <div
+            class="grid grid-cols-1 gap-2 min-[360px]:grid-cols-2 md:grid-cols-3 md:gap-[15px] xl:grid-cols-6"
+          >
+            <article
+              class="min-h-[123px] rounded-md border border-fastfix-border bg-white p-3 shadow-card md:min-h-[93px] md:p-[13px] [&_h3]:mb-0 [&_h3]:mt-2 [&_h3]:text-xs [&_h3]:font-bold md:[&_h3]:mt-2.5 md:[&_h3]:text-[13px] [&_p]:mt-1 [&_p]:text-xs [&_p]:text-fastfix-muted md:[&_p]:hidden"
+            >
+              <span
+                class="flex h-[30px] w-[30px] items-center justify-center rounded-md bg-[#EDF4FF] md:h-[39px] md:w-[39px] [&_img]:h-[18px] [&_img]:w-[18px] md:[&_img]:h-[22px] md:[&_img]:w-[22px]"
+                ><img src="assets/icons/icon_phone.svg" alt=""
+              /></span>
+              <h3>Смартфони</h3>
+              <p>Дисплей, батарея.</p>
+            </article>
+            <article
+              class="min-h-[123px] rounded-md border border-fastfix-border bg-white p-3 shadow-card md:min-h-[93px] md:p-[13px] [&_h3]:mb-0 [&_h3]:mt-2 [&_h3]:text-xs [&_h3]:font-bold md:[&_h3]:mt-2.5 md:[&_h3]:text-[13px] [&_p]:mt-1 [&_p]:text-xs [&_p]:text-fastfix-muted md:[&_p]:hidden"
+            >
+              <span
+                class="flex h-[30px] w-[30px] items-center justify-center rounded-md bg-[#EDF4FF] md:h-[39px] md:w-[39px] [&_img]:h-[18px] [&_img]:w-[18px] md:[&_img]:h-[22px] md:[&_img]:w-[22px]"
+                ><img src="assets/icons/icon_laptop.svg" alt=""
+              /></span>
+              <h3>Ноутбуки</h3>
+              <p>Живлення, екран.</p>
+            </article>
+            <article
+              class="min-h-[123px] rounded-md border border-fastfix-border bg-white p-3 shadow-card md:min-h-[93px] md:p-[13px] [&_h3]:mb-0 [&_h3]:mt-2 [&_h3]:text-xs [&_h3]:font-bold md:[&_h3]:mt-2.5 md:[&_h3]:text-[13px] [&_p]:mt-1 [&_p]:text-xs [&_p]:text-fastfix-muted md:[&_p]:hidden"
+            >
+              <span
+                class="flex h-[30px] w-[30px] items-center justify-center rounded-md bg-[#EDF4FF] md:h-[39px] md:w-[39px] [&_img]:h-[18px] [&_img]:w-[18px] md:[&_img]:h-[22px] md:[&_img]:w-[22px]"
+                ><img src="assets/icons/icon_computer.svg" alt=""
+              /></span>
+              <h3>Комп’ютери</h3>
+              <p>Діагностика, ПК.</p>
+            </article>
+            <article
+              class="min-h-[123px] rounded-md border border-fastfix-border bg-white p-3 shadow-card md:min-h-[93px] md:p-[13px] [&_h3]:mb-0 [&_h3]:mt-2 [&_h3]:text-xs [&_h3]:font-bold md:[&_h3]:mt-2.5 md:[&_h3]:text-[13px] [&_p]:mt-1 [&_p]:text-xs [&_p]:text-fastfix-muted md:[&_p]:hidden"
+            >
+              <span
+                class="flex h-[30px] w-[30px] items-center justify-center rounded-md bg-[#EDF4FF] md:h-[39px] md:w-[39px] [&_img]:h-[18px] [&_img]:w-[18px] md:[&_img]:h-[22px] md:[&_img]:w-[22px]"
+                ><img src="assets/icons/icon_headphones.svg" alt=""
+              /></span>
+              <h3>Навушники</h3>
+              <p>Звук, зарядка.</p>
+            </article>
+            <article
+              class="min-h-[123px] rounded-md border border-fastfix-border bg-white p-3 shadow-card md:min-h-[93px] md:p-[13px] [&_h3]:mb-0 [&_h3]:mt-2 [&_h3]:text-xs [&_h3]:font-bold md:[&_h3]:mt-2.5 md:[&_h3]:text-[13px] [&_p]:mt-1 [&_p]:text-xs [&_p]:text-fastfix-muted md:[&_p]:hidden"
+            >
+              <span
+                class="flex h-[30px] w-[30px] items-center justify-center rounded-md bg-[#EDF4FF] md:h-[39px] md:w-[39px] [&_img]:h-[18px] [&_img]:w-[18px] md:[&_img]:h-[22px] md:[&_img]:w-[22px]"
+                ><img src="assets/icons/icon_household.svg" alt=""
+              /></span>
+              <h3>Побутова техніка</h3>
+              <p>Малі прилади.</p>
+            </article>
+            <article
+              class="min-h-[123px] rounded-md border border-fastfix-border bg-white p-3 shadow-card md:min-h-[93px] md:p-[13px] [&_h3]:mb-0 [&_h3]:mt-2 [&_h3]:text-xs [&_h3]:font-bold md:[&_h3]:mt-2.5 md:[&_h3]:text-[13px] [&_p]:mt-1 [&_p]:text-xs [&_p]:text-fastfix-muted md:[&_p]:hidden"
+            >
+              <span
+                class="flex h-[30px] w-[30px] items-center justify-center rounded-md bg-[#EDF4FF] md:h-[39px] md:w-[39px] [&_img]:h-[18px] [&_img]:w-[18px] md:[&_img]:h-[22px] md:[&_img]:w-[22px]"
+                ><img src="assets/icons/icon_other.svg" alt=""
+              /></span>
+              <h3>Інша техніка</h3>
+              <p>За запитом.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lab 7: YouTube media integration -->
+      <section class="pt-4 md:pt-8" aria-labelledby="video-title">
+        <div
+          class="mx-auto w-[calc(100%-40px)] max-w-content md:w-[calc(100%-64px)] xl:w-[calc(100%-120px)]"
+        >
+          <header
+            class="mb-[14px] md:mb-8 [&_h2]:mb-1 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:leading-tight md:[&_h2]:text-[28px] [&_p]:text-xs [&_p]:text-[#5B6B82] md:[&_p]:text-sm md:[&_p]:text-fastfix-muted"
+          >
+            <h2 id="video-title" class="scroll-mt-[155px] md:scroll-mt-20">
+              Як проходить ремонт смартфона
+            </h2>
+            <p>Практичний приклад заміни пошкодженого дисплея від iFixit.</p>
+          </header>
+          <div
+            class="aspect-video overflow-hidden rounded-[10px] border border-fastfix-border bg-fastfix-dark shadow-card"
+            data-youtube-player
+            data-video-id="jtl4KKRIheo"
+            data-video-title="iFixit: заміна дисплея iPhone 11"
+          >
+            <a
+              class="flex h-full w-full flex-col items-center justify-center gap-4 px-5 text-center text-white transition-colors hover:text-fastfix-cyan focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fastfix-cyan"
+              href="https://www.youtube.com/watch?v=jtl4KKRIheo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="h-12 w-12" viewBox="0 0 48 48" aria-hidden="true">
+                <circle cx="24" cy="24" r="23" fill="#FF6B0B" />
+                <path d="M19 15.5 34 24 19 32.5Z" fill="white" />
+              </svg>
+              <span class="font-bold">Відкрити відео на YouTube</span>
+            </a>
+          </div>
+          <p
+            class="mt-2 hidden text-xs text-fastfix-muted"
+            data-video-local-note
+          >
+            Для вбудованого програвання відкрийте сайт через Live Server або
+            Netlify.
+          </p>
+        </div>
+      </section>
+
+      <section class="pt-4 md:pt-8" aria-labelledby="reviews-title">
+        <div
+          class="mx-auto w-[calc(100%-40px)] max-w-content md:w-[calc(100%-64px)] xl:w-[calc(100%-120px)]"
+        >
+          <header
+            class="mb-[14px] md:mb-8 [&_h2]:mb-1 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:leading-tight md:[&_h2]:text-[28px] [&_p]:text-xs [&_p]:text-[#5B6B82] md:[&_p]:text-sm md:[&_p]:text-fastfix-muted"
+          >
+            <h2 id="reviews-title" class="scroll-mt-[155px] md:scroll-mt-20">
+              Відгуки клієнтів
+            </h2>
+            <p>Матеріали зі сторінки «Про нас».</p>
+          </header>
+          <div class="grid grid-cols-1 gap-2 md:grid-cols-3 md:gap-6">
+            <article
+              class="rounded-[10px] border border-fastfix-border bg-white p-5 shadow-card"
+            >
+              <h3 class="font-bold">
+                Олександр К.
+                <span class="text-fastfix-orange" aria-hidden="true"
+                  >★★★★★</span
+                >
+                <span class="sr-only">5 із 5 зірок</span>
+              </h3>
+              <p class="mt-2 text-fastfix-muted">
+                Зрозуміло пояснили ціну ремонту.
+              </p>
+            </article>
+            <article
+              class="rounded-[10px] border border-fastfix-border bg-white p-5 shadow-card"
+            >
+              <h3 class="font-bold">
+                Марія Л.
+                <span class="text-fastfix-orange" aria-hidden="true"
+                  >★★★★★</span
+                >
+                <span class="sr-only">5 із 5 зірок</span>
+              </h3>
+              <p class="mt-2 text-fastfix-muted">
+                Швидкий зворотний зв’язок і сервіс.
+              </p>
+            </article>
+            <article
+              class="rounded-[10px] border border-fastfix-border bg-white p-5 shadow-card"
+            >
+              <h3 class="font-bold">
+                Дмитро С.
+                <span class="text-fastfix-orange" aria-hidden="true"
+                  >★★★★★</span
+                >
+                <span class="sr-only">5 із 5 зірок</span>
+              </h3>
+              <p class="mt-2 text-fastfix-muted">
+                Зручно відстежувати статус заявки.
+              </p>
+            </article>
+          </div>
+          <div
+            class="mt-3 flex flex-col gap-3 rounded-[10px] bg-fastfix-dark p-5 text-white md:mt-6 md:flex-row md:items-center md:justify-between md:p-7"
+          >
+            <p class="max-w-3xl text-fastfix-light">
+              FastFix допомагає зрозуміти орієнтовну вартість ремонту ще до
+              звернення в сервіс.
+            </p>
+            <a class="secondary-button shrink-0" href="about.html"
+              >Більше про FastFix <span aria-hidden="true">›</span></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Lab 7: Google Maps -->
+      <section class="pt-4 md:pt-8" aria-labelledby="contacts-title">
+        <div
+          class="mx-auto w-[calc(100%-40px)] max-w-content md:w-[calc(100%-64px)] xl:w-[calc(100%-120px)]"
+        >
+          <header
+            class="mb-[14px] md:mb-8 [&_h2]:mb-1 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:leading-tight md:[&_h2]:text-[28px] [&_p]:text-xs [&_p]:text-[#5B6B82] md:[&_p]:text-sm md:[&_p]:text-fastfix-muted"
+          >
+            <h2 id="contacts-title" class="scroll-mt-[155px] md:scroll-mt-20">
+              Контакти та демонстраційна локація
+            </h2>
+            <p>
+              Фактичну адресу FastFix не вказано; карта показує центр Києва для
+              демонстрації.
+            </p>
+          </header>
+          <div>
+            <div
+              class="min-h-[320px] overflow-hidden rounded-[10px] border border-fastfix-border bg-white shadow-card"
+            >
+              <iframe
+                class="h-[320px] w-full md:h-[420px]"
+                src="https://www.google.com/maps?q=Maidan%20Nezalezhnosti%2C%20Kyiv&output=embed"
+                title="Демонстраційна локація FastFix — центр Києва"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="request"
+        class="scroll-mt-[155px] pb-[22px] pt-4 md:scroll-mt-20 md:pb-[42px] md:pt-5"
+        aria-labelledby="cta-title"
+      >
+        <div
+          class="mx-auto w-[calc(100%-40px)] max-w-content md:w-[calc(100%-64px)] xl:w-[calc(100%-120px)]"
+        >
+          <div
+            class="rounded-md bg-fastfix-dark px-3 py-[14px] text-white md:rounded-[10px] md:px-[29px] md:py-[25px]"
+          >
+            <h2
+              id="cta-title"
+              class="mb-1 text-[15px] font-bold md:mb-[7px] md:text-[25px]"
+            >
+              Потрібен ремонт? Оформи заявку онлайн
+            </h2>
+            <p
+              class="mb-2 text-xs text-fastfix-light md:mb-[18px] md:text-[15px]"
+            >
+              Зазнач пристрій, проблему та зручний день звернення.
+            </p>
+            <a
+              class="inline-flex min-h-11 items-center justify-between rounded-md bg-[#F97316] px-4 font-bold text-white transition hover:-translate-y-px hover:bg-[#EA580C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fastfix-cyan active:translate-y-0 active:bg-[#C2410C] disabled:pointer-events-none disabled:opacity-50 w-full md:w-[229px]"
+              href="request.html"
+              >Оформити заявку <span aria-hidden="true">›</span></a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="min-h-[113px] bg-fastfix-dark py-[22px] text-white md:min-h-[126px] md:py-[34px]"
+    >
+      <div
+        class="mx-auto w-[calc(100%-40px)] max-w-content md:w-[calc(100%-64px)] xl:w-[calc(100%-120px)] grid grid-cols-[90px_1fr] gap-2 md:grid-cols-[250px_1fr]"
+      >
+        <a
+          class="inline-flex items-center gap-2 self-start text-xs font-bold md:gap-3 md:text-[22px]"
+          href="index.html"
+          aria-label="FastFix — головна"
+          ><span class="logo-mark" aria-hidden="true"
+            ><img src="assets/icons/logo-frame.svg" alt="" /><img
+              src="assets/icons/logo-bolt.svg"
+              alt="" /></span
+          >FastFix</a
+        >
+        <nav
+          class="grid grid-cols-2 gap-x-3.5 gap-y-2.5 text-xs md:grid-cols-3 md:gap-x-12 md:gap-y-[15px] md:text-[13px] xl:gap-x-[100px] [&_a]:flex [&_a]:min-h-6 [&_a]:items-center"
+          aria-label="Навігація у підвалі"
+        >
+          <a
+            class="transition-colors hover:text-fastfix-cyan focus-visible:outline focus-visible:outline-2 focus-visible:outline-fastfix-cyan"
+            href="index.html"
+            >Головна</a
+          ><a
+            class="transition-colors hover:text-fastfix-cyan focus-visible:outline focus-visible:outline-2 focus-visible:outline-fastfix-cyan"
+            href="request.html"
+            >Оформлення заявки</a
+          ><a
+            class="transition-colors hover:text-fastfix-cyan focus-visible:outline focus-visible:outline-2 focus-visible:outline-fastfix-cyan"
+            href="technology.html"
+            >Техніка</a
+          ><a
+            id="account"
+            class="transition-colors hover:text-fastfix-cyan focus-visible:outline focus-visible:outline-2 focus-visible:outline-fastfix-cyan"
+            href="account.html"
+            >Особистий кабінет</a
+          ><a
+            class="transition-colors hover:text-fastfix-cyan focus-visible:outline focus-visible:outline-2 focus-visible:outline-fastfix-cyan"
+            href="calculator.html"
+            >Калькулятор</a
+          ><a
+            id="about"
+            class="transition-colors hover:text-fastfix-cyan focus-visible:outline focus-visible:outline-2 focus-visible:outline-fastfix-cyan"
+            href="about.html"
+            >Про нас</a
+          >
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .page-container {
+    @apply mx-auto w-[calc(100%-40px)] max-w-content md:w-[calc(100%-64px)] xl:w-[calc(100%-120px)];
+  }
+  body > header:has(.page-intro) {
+    @apply h-[145px] md:h-[186px];
+  }
+  .header-bar {
+    @apply flex h-16 items-center justify-between md:h-[74px];
+  }
+  .logo {
+    @apply inline-flex items-center gap-2 font-bold md:gap-3 md:text-[22px];
+  }
+  .desktop-nav {
+    @apply hidden items-center gap-4 text-xs lg:flex xl:gap-[30px];
+  }
+  .desktop-nav a,
+  .site-footer a {
+    @apply transition-colors hover:text-fastfix-cyan focus-visible:outline focus-visible:outline-2 focus-visible:outline-fastfix-cyan;
+  }
+  .mobile-menu {
+    @apply relative lg:hidden;
+  }
+  .mobile-menu summary {
+    @apply flex h-11 w-11 cursor-pointer list-none items-center justify-center text-2xl;
+  }
+  .mobile-menu nav {
+    @apply absolute right-0 top-11 grid w-[220px] gap-1 rounded-md border border-slate-700 bg-fastfix-dark p-3 shadow-xl;
+  }
+  .mobile-menu nav a {
+    @apply rounded px-3 py-2 hover:bg-slate-800;
+  }
+  .page-intro {
+    @apply pt-2 md:pt-0;
+  }
+  .page-intro h1 {
+    @apply text-[23px] font-bold md:text-[37px];
+  }
+  .page-intro p {
+    @apply mt-1 text-xs text-[#C9D4E3] md:mt-2 md:text-[15px] md:text-fastfix-light;
+  }
+  .page-main {
+    @apply pb-[22px] pt-[145px] md:pb-[42px] md:pt-[186px];
+  }
+  .page-section {
+    @apply pt-[18px] md:pt-[34px];
+  }
+  .section-heading {
+    @apply mb-[14px] md:mb-[34px];
+  }
+  .section-heading h2 {
+    @apply mb-1 text-xl font-bold md:text-[28px];
+  }
+  .section-heading p {
+    @apply text-xs text-[#667B98] md:text-sm md:text-fastfix-muted;
+  }
+  .page-grid {
+    @apply grid gap-2 md:gap-6;
+  }
+  .page-grid-3 {
+    @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+  }
+  .page-grid-2 {
+    @apply grid-cols-1 md:grid-cols-2;
+  }
+  .page-card,
+  .panel,
+  .stats article,
+  .history {
+    @apply rounded-md border border-fastfix-border bg-white p-3 shadow-card md:rounded-[10px] md:p-5;
+  }
+  .page-card h3 {
+    @apply mb-1 mt-3 text-sm font-bold md:text-[17px];
+  }
+  .page-card p {
+    @apply text-xs text-[#667B98] md:text-sm md:text-fastfix-muted;
+  }
+  .page-card > .icon-box {
+    @apply flex h-[39px] w-[39px] items-center justify-center rounded-md bg-[#EDF4FF];
+  }
+  .page-card > .icon-box img {
+    @apply h-[22px] w-[22px];
+  }
+  .filter-form {
+    @apply grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-8;
+  }
+  .filter-form .primary-button {
+    @apply md:col-start-1;
+  }
+  .form-stack {
+    @apply flex flex-col gap-[14px];
+  }
+  .form-stack label,
+  .filter-form label {
+    @apply flex flex-col gap-2 font-bold;
+  }
+  .form-stack input,
+  .form-stack select,
+  .form-stack textarea,
+  .filter-form input,
+  .filter-form select {
+    @apply min-h-[46px] rounded-md border border-fastfix-border bg-white px-[13px] py-2.5 text-fastfix-muted focus:border-fastfix-cyan focus:outline-none focus:ring-2 focus:ring-fastfix-cyan/40;
+  }
+  .form-stack textarea {
+    @apply min-h-[72px] resize-y;
+  }
+  .form-stack .check {
+    @apply flex-row items-center font-normal;
+  }
+  .check input {
+    @apply min-h-0;
+  }
+  .primary-button,
+  .secondary-button {
+    @apply inline-flex min-h-11 cursor-pointer items-center justify-between gap-7 rounded-md px-4 font-bold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-fastfix-cyan;
+  }
+  .primary-button {
+    @apply bg-[#F97316] text-white hover:bg-[#EA580C] active:bg-[#C2410C];
+  }
+  .secondary-button {
+    @apply border border-fastfix-primary bg-white text-fastfix-primary;
+  }
+  .split-layout {
+    @apply grid grid-cols-1 gap-3 xl:grid-cols-[824px_1fr] xl:gap-6;
+  }
+  .estimate {
+    @apply flex flex-col items-start gap-2.5;
+  }
+  .estimate h2 {
+    @apply mb-3;
+  }
+  .estimate p {
+    @apply mt-2 text-fastfix-muted;
+  }
+  .estimate strong {
+    @apply text-[23px] text-fastfix-primary md:text-[28px];
+  }
+  .estimate small {
+    @apply mt-[15px] text-fastfix-muted;
+  }
+  .faq {
+    @apply mt-2.5 rounded-md border border-fastfix-border bg-white px-[18px] py-4;
+  }
+  .faq summary {
+    @apply cursor-pointer font-bold;
+  }
+  .stats {
+    @apply grid grid-cols-1 gap-2 md:grid-cols-3 md:gap-6;
+  }
+  .stats article {
+    @apply flex items-center justify-between;
+  }
+  .stats strong {
+    @apply text-[28px] text-fastfix-primary;
+  }
+  .repair-item .status {
+    @apply my-2.5 inline-block rounded-full bg-[#EDF4FF] px-2.5 py-1.5 font-bold text-fastfix-primary;
+  }
+  .history p {
+    @apply m-0 grid gap-1 border-b border-fastfix-border py-3 md:flex md:justify-between;
+  }
+  .prose {
+    @apply text-base leading-relaxed;
+  }
+  .prose p + p {
+    @apply mt-3;
+  }
+  .cta-panel {
+    @apply rounded-[10px] bg-fastfix-dark p-7 text-white;
+  }
+  .cta-panel h2 {
+    @apply mb-2;
+  }
+  .cta-panel p {
+    @apply mb-5;
+  }
+  .page-grid + .secondary-button {
+    @apply mt-3 md:mt-6;
+  }
+  .team img {
+    @apply h-[250px] w-full rounded-lg object-cover md:h-[260px];
+  }
+  .team b {
+    @apply mb-2 block;
+  }
+  .form-status {
+    @apply font-bold text-green-700;
+  }
+  .site-footer {
+    @apply mt-[22px] min-h-[126px] bg-fastfix-dark py-[22px] text-white md:py-[34px];
+  }
+  .footer-grid {
+    @apply grid grid-cols-[90px_1fr] gap-2 md:grid-cols-[250px_1fr];
+  }
+  .site-footer nav {
+    @apply grid grid-cols-2 gap-2.5 text-xs md:grid-cols-3 md:gap-x-12 md:text-[13px];
+  }
+}

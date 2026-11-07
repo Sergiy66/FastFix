@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="FastFix — Техніка" />
+    <title>Техніка — FastFix</title>
+    <link rel="icon" href="assets/icons/logo-bolt.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="m-0 overflow-x-hidden bg-[#F3F6FA] font-inter text-[#1F2937]">
+    <header class="fixed inset-x-0 top-0 z-50 bg-[#0B1220] text-white">
+      <div class="page-container header-bar">
+        <a class="logo" href="index.html"
+          ><span class="logo-mark"
+            ><img src="assets/icons/logo-frame.svg" alt="" /><img
+              src="assets/icons/logo-bolt.svg"
+              alt="" /></span
+          >FastFix</a
+        >
+        <nav class="desktop-nav" aria-label="Основна навігація">
+          <a href="index.html">Головна</a
+          ><a href="technology.html" aria-current="page">Техніка</a
+          ><a href="calculator.html">Калькулятор</a
+          ><a href="request.html">Оформлення заявки</a
+          ><a href="account.html">Особистий кабінет</a
+          ><a href="about.html">Про нас</a>
+        </nav>
+        <details class="mobile-menu">
+          <summary aria-label="Відкрити меню">☰</summary>
+          <nav aria-label="Мобільна навігація">
+            <a href="index.html">Головна</a
+            ><a href="technology.html" aria-current="page">Техніка</a
+            ><a href="calculator.html">Калькулятор</a
+            ><a href="request.html">Оформлення заявки</a
+            ><a href="account.html">Особистий кабінет</a
+            ><a href="about.html">Про нас</a>
+          </nav>
+        </details>
+      </div>
+      <div class="page-container page-intro">
+        <h1>Техніка</h1>
+        <p>Обери категорію для оцінки ремонту</p>
+      </div>
+    </header>
+    <main class="page-main">
+      <section class="page-section">
+        <div class="page-container">
+          <header class="section-heading">
+            <h2>Категорії техніки</h2>
+            <p>Ми працюємо з електронікою та побутовими пристроями.</p>
+          </header>
+          <div class="page-grid page-grid-3">
+            <article class="page-card">
+              <span class="icon-box"
+                ><img src="assets/icons/icon_phone.svg" alt=""
+              /></span>
+              <h3>Смартфони</h3>
+              <p>Дисплеї, акумулятори, камери та роз&rsquo;єми.</p>
+            </article>
+            <article class="page-card">
+              <span class="icon-box"
+                ><img src="assets/icons/icon_laptop.svg" alt=""
+              /></span>
+              <h3>Ноутбуки</h3>
+              <p>Живлення, дисплеї, клавіатури та система.</p>
+            </article>
+            <article class="page-card">
+              <span class="icon-box"
+                ><img src="assets/icons/icon_computer.svg" alt=""
+              /></span>
+              <h3>Комп&rsquo;ютери</h3>
+              <p>Комплектуючі, діагностика, оновлення.</p>
+            </article>
+            <article class="page-card">
+              <span class="icon-box"
+                ><img src="assets/icons/icon_headphones.svg" alt=""
+              /></span>
+              <h3>Навушники</h3>
+              <p>Звук, акумулятори та підключення.</p>
+            </article>
+            <article class="page-card">
+              <span class="icon-box"
+                ><img src="assets/icons/icon_household.svg" alt=""
+              /></span>
+              <h3>Побутова техніка</h3>
+              <p>Малі прилади та несправності електроніки.</p>
+            </article>
+            <article class="page-card">
+              <span class="icon-box"
+                ><img src="assets/icons/icon_other.svg" alt=""
+              /></span>
+              <h3>Інша техніка</h3>
+              <p>Інші пристрої — за запитом.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="page-section">
+        <div class="page-container">
+          <header class="section-heading">
+            <h2>Пошук і фільтри</h2>
+            <p>Знайди категорію або введи назву пристрою.</p>
+          </header>
+          <form class="filter-form">
+            <label
+              >Пошук за назвою<input
+                type="search"
+                name="q"
+                placeholder="Наприклад, ноутбук" /></label
+            ><label
+              >Тип обладнання<select name="type">
+                <option>Усі категорії</option>
+                <option>Смартфони</option>
+                <option>Ноутбуки</option>
+              </select></label
+            ><a class="primary-button" href="calculator.html"
+              >Оцінити ремонт <span>›</span></a
+            >
+          </form>
+        </div>
+      </section>
+      <section class="page-section">
+        <div class="page-container">
+          <header class="section-heading">
+            <h2>Як відбувається діагностика?</h2>
+            <p>Три кроки від вибору техніки до кошторису.</p>
+          </header>
+          <div class="page-grid page-grid-3">
+            <article class="page-card">
+              <span class="icon-box"
+                ><img src="assets/icons/icon_phone.svg" alt=""
+              /></span>
+              <h3>01 · Оберіть техніку</h3>
+              <p>Вкажіть категорію й модель пристрою.</p>
+            </article>
+            <article class="page-card">
+              <span class="icon-box"
+                ><img src="assets/icons/icon_photo.svg" alt=""
+              /></span>
+              <h3>02 · Додайте фото</h3>
+              <p>Опишіть несправність та її прояви.</p>
+            </article>
+            <article class="page-card">
+              <span class="icon-box"
+                ><img src="assets/icons/icon_price.svg" alt=""
+              /></span>
+              <h3>03 · Отримайте оцінку</h3>
+              <p>Порівняйте ремонт і покупку.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="page-container footer-grid">
+        <a class="logo" href="index.html"
+          ><span class="logo-mark"
+            ><img src="assets/icons/logo-frame.svg" alt="" /><img
+              src="assets/icons/logo-bolt.svg"
+              alt="" /></span
+          >FastFix</a
+        >
+        <nav aria-label="Навігація у підвалі">
+          <a href="index.html">Головна</a><a href="technology.html">Техніка</a
+          ><a href="calculator.html">Калькулятор</a
+          ><a href="request.html">Оформлення заявки</a
+          ><a href="account.html">Особистий кабінет</a
+          ><a href="about.html">Про нас</a>
+        </nav>
+      </div>
+    </footer>
+    <script src="js/app.js"></script>
+  </body>
+</html>

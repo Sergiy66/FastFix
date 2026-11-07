@@ -1,0 +1,296 @@
+@font-face {
+  font-family: Inter;
+  src: url("../assets/fonts/inter-400.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: Inter;
+  src: url("../assets/fonts/inter-600.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: Inter;
+  src: url("../assets/fonts/inter-700.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: Manrope;
+  src: url("../assets/fonts/manrope-700.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+.hero-image {
+  background-image:
+    linear-gradient(90deg, #0b1220 0%, transparent 40%),
+    url("../assets/images/hero_bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.logo-mark {
+  position: relative;
+  display: inline-block;
+  width: 25px;
+  height: 27px;
+}
+.logo-mark img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Interactive states from the FastFix Figma design system */
+.card,
+.repair-card,
+.comparison-card,
+.page-card,
+.panel,
+.stats article,
+.history,
+.faq,
+main article {
+  position: relative;
+  transform-origin: center;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+  will-change: transform;
+}
+
+.icon-box,
+main article img {
+  transition: transform 180ms ease;
+}
+
+.button,
+.primary-button,
+.secondary-button {
+  overflow: hidden;
+  transform-origin: center;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.button span,
+.primary-button span,
+.secondary-button span {
+  transition: transform 160ms ease;
+}
+
+main button,
+main a:has(> span[aria-hidden="true"]) {
+  transform-origin: center;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease;
+}
+
+.button-primary,
+.primary-button {
+  background: #f97316;
+}
+
+.button-primary:active,
+.primary-button:active {
+  background: #c2410c;
+  transform: scale(0.98);
+}
+
+.secondary-button:active {
+  color: #fff;
+  background: #1e3a8a;
+  transform: scale(0.98);
+}
+
+.button:disabled,
+.primary-button:disabled,
+.secondary-button:disabled {
+  pointer-events: none;
+  color: #72849a;
+  border-color: #cbd5e1;
+  background: #cbd5e1;
+  box-shadow: none;
+  transform: none;
+}
+
+input,
+select,
+textarea {
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  transform: scale(1.01);
+}
+
+input:not([type="checkbox"]),
+select,
+textarea {
+  border: 1px solid #cbd5e1;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+input:not([type="checkbox"]):hover,
+select:hover,
+textarea:hover {
+  border-color: #94a3b8;
+}
+
+input:not([type="checkbox"]):focus,
+input:not([type="checkbox"]):focus-visible,
+select:focus,
+select:focus-visible,
+textarea:focus,
+textarea:focus-visible {
+  border-color: #06b6d4;
+  outline: 2px solid #06b6d4;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgb(6 182 212 / 0.16);
+}
+
+input[type="checkbox"]:focus-visible {
+  outline: 2px solid #06b6d4;
+  outline-offset: 2px;
+}
+
+.main-nav a,
+.desktop-nav a,
+.site-footer nav a,
+.mobile-menu nav a {
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover,
+  .repair-card:hover,
+  .comparison-card:hover,
+  .page-card:hover,
+  .panel:hover,
+  .stats article:hover,
+  .history:hover,
+  .faq:hover,
+  main article:hover {
+    z-index: 2;
+    border-color: #b9c9dc;
+    box-shadow: 0 10px 26px rgb(15 23 42 / 0.14);
+    transform: scale(1.025);
+  }
+
+  .card:hover .icon-box,
+  .repair-card:hover .icon-box,
+  .page-card:hover .icon-box,
+  main article:hover .icon-box {
+    transform: scale(1.08);
+  }
+
+  .button:hover,
+  .primary-button:hover,
+  .secondary-button:hover,
+  main button:hover,
+  main a:has(> span[aria-hidden="true"]):hover {
+    box-shadow: 0 8px 18px rgb(15 23 42 / 0.18);
+    transform: scale(1.03);
+  }
+
+  .button-primary:hover,
+  .primary-button:hover {
+    background: #ea580c;
+  }
+
+  .secondary-button:hover {
+    color: #fff;
+    background: #1e3a8a;
+  }
+
+  .button:hover span,
+  .primary-button:hover span,
+  .secondary-button:hover span,
+  main button:hover span,
+  main a:has(> span[aria-hidden="true"]):hover span {
+    transform: translateX(3px);
+  }
+
+  .main-nav a:hover,
+  .desktop-nav a:hover,
+  .site-footer nav a:hover,
+  .mobile-menu nav a:hover {
+    transform: scale(1.04);
+  }
+}
+
+main button:active,
+main a:has(> span[aria-hidden="true"]):active {
+  transform: scale(0.98);
+}
+
+#request-form,
+#request-form + .panel,
+#request-form:hover,
+#request-form + .panel:hover {
+  z-index: auto;
+  border-color: #d9e2ec;
+  box-shadow: 0 1px 3px rgb(15 23 42 / 0.08);
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .repair-card,
+  .comparison-card,
+  .page-card,
+  .panel,
+  .stats article,
+  .history,
+  .faq,
+  main article,
+  .icon-box,
+  .button,
+  .primary-button,
+  .secondary-button,
+  input,
+  select,
+  textarea {
+    transition: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .logo-mark {
+    width: 40px;
+    height: 42px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
