@@ -256,6 +256,145 @@ main a:has(> span[aria-hidden="true"]):active {
   transform: none;
 }
 
+.feedback-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+
+.feedback-layout .form-stack {
+  gap: 16px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field > label:not(.check) {
+  font-weight: 700;
+}
+
+.field-hint,
+.field-error {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.field-hint {
+  color: #64748b;
+}
+
+.field-error {
+  min-height: 17px;
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+.form-field.is-error input:not([type="checkbox"]),
+.form-field.is-error textarea {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgb(220 38 38 / 0.12);
+}
+
+.form-field.is-error input[type="checkbox"] {
+  outline: 2px solid #dc2626;
+  outline-offset: 2px;
+}
+
+.form-field.is-success input:not([type="checkbox"]),
+.form-field.is-success textarea {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 3px rgb(22 163 74 / 0.1);
+}
+
+.feedback-note {
+  align-self: start;
+}
+
+.feedback-note h2 {
+  margin-bottom: 12px;
+}
+
+.feedback-note p + p {
+  margin-top: 16px;
+}
+
+.feedback-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.feedback-modal[hidden] {
+  display: none;
+}
+
+.feedback-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgb(11 18 32 / 0.72);
+}
+
+.feedback-modal-card {
+  position: relative;
+  width: min(100%, 460px);
+  border: 1px solid #d9e2ec;
+  border-radius: 10px;
+  background: #fff;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 24px 60px rgb(11 18 32 / 0.28);
+  outline: none;
+}
+
+.feedback-modal-card:focus-visible {
+  outline: 3px solid #06b6d4;
+  outline-offset: 4px;
+}
+
+.feedback-modal-card h2 {
+  margin: 14px 0 8px;
+  font-size: 24px;
+}
+
+.feedback-modal-card p {
+  margin-bottom: 22px;
+  color: #64748b;
+}
+
+.feedback-modal-card .primary-button {
+  margin-inline: auto;
+}
+
+.feedback-modal-icon {
+  display: inline-grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border-radius: 999px;
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .feedback-layout {
+    grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+    gap: 24px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .card,
   .repair-card,
