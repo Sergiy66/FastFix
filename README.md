@@ -5,7 +5,7 @@ FastFix — адаптивний багатосторінковий сайт с�
 ## Демо
 
 - [Netlify](https://fast-fixx.netlify.app)
-- GitHub Pages — посилання буде доступне після підключення репозиторію
+- [GitHub Pages](https://sergiy66.github.io/FastFix/)
 
 ## Технології
 
