@@ -4,3 +4,16 @@ node_modules/
 !.env.example
 .netlify/
 *.log
+
+# Build and test output
+dist/
+coverage/
+.cache/
+
+# Local tooling and OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.tmp
