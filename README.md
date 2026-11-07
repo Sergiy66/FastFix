@@ -6,6 +6,7 @@ FastFix — адаптивний багатосторінковий сайт с�
 
 - [Netlify](https://fast-fixx.netlify.app)
 - [GitHub Pages](https://sergiy66.github.io/FastFix/)
+- [Vercel](https://fastfix-six.vercel.app/)
 
 ## Технології
 
@@ -46,6 +47,15 @@ python -m http.server 8080
 ```
 
 Відкрийте `http://localhost:8080`.
+
+## Тести
+
+```bash
+npm install
+npm test
+```
+
+Тести перевіряють RegEx-правила та DOM-поведінку форми зворотного зв&rsquo;язку.
 
 ## Сторінки
 
