@@ -37,6 +37,7 @@ function initFeedbackForm() {
   if (!form || !modal) return;
 
   const controls = [...form.elements].filter((element) => element.name);
+  const clearButton = form.querySelector("[data-feedback-clear]");
   let returnFocus = null;
 
   const getValues = () => ({
@@ -99,6 +100,15 @@ function initFeedbackForm() {
     }
   });
 
+  clearButton?.addEventListener("click", () => {
+    form.reset();
+    controls.forEach((control) => {
+      delete control.dataset.touched;
+      renderField(control, "");
+    });
+    form.elements.name.focus();
+  });
+
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     const errors = validateFeedbackValues(getValues());
@@ -114,11 +124,6 @@ function initFeedbackForm() {
       return;
     }
 
-    form.reset();
-    controls.forEach((control) => {
-      delete control.dataset.touched;
-      renderField(control, "");
-    });
     openModal();
   });
 }

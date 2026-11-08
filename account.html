@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="m-0 overflow-x-hidden bg-[#F3F6FA] font-inter text-[#1F2937]">
-    <header class="fixed inset-x-0 top-0 z-50 bg-[#0B1220] text-white">
+    <header class="site-header fixed inset-x-0 top-0 z-50 bg-[#0B1220] text-white">
       <div class="page-container header-bar">
         <a class="logo" href="index.html"
           ><span class="logo-mark"
@@ -27,7 +27,7 @@
           ><a href="about.html">Про нас</a>
         </nav>
         <details class="mobile-menu">
-          <summary aria-label="Відкрити меню">☰</summary>
+          <summary aria-label="Відкрити меню"><span></span><span></span><span></span></summary>
           <nav aria-label="Мобільна навігація">
             <a href="index.html">Головна</a><a href="technology.html">Техніка</a
             ><a href="calculator.html">Калькулятор</a
@@ -37,12 +37,16 @@
           </nav>
         </details>
       </div>
-      <div class="page-container page-intro">
-        <h1>Особистий кабінет</h1>
+      <div class="page-container mobile-page-intro" aria-hidden="true">
+        <strong>Особистий кабінет</strong>
         <p>Заявки, статуси та історія ремонтів</p>
       </div>
     </header>
     <main class="page-main">
+      <div class="page-container page-intro">
+        <h1>Особистий кабінет</h1>
+        <p>Заявки, статуси та історія ремонтів</p>
+      </div>
       <section class="page-section">
         <div class="page-container">
           <header class="section-heading">
@@ -67,7 +71,7 @@
               <h3>Смартфон · Заміна дисплея</h3>
               <p>Уточнюється вартість ремонту.</p>
               <span class="status">У діагностиці</span
-              ><button class="secondary-button">Деталі ремонту</button>
+              ><button class="secondary-button" type="button">Деталі ремонту</button>
             </article>
             <article class="panel repair-item">
               <h3>Ноутбук · Проблема із живленням</h3>
@@ -92,17 +96,6 @@
           </div>
         </div>
       </section>
-      <section class="page-section">
-        <div class="page-container">
-          <header class="section-heading">
-            <h2>Налаштування профілю</h2>
-            <p>Контактні дані та спосіб отримання сповіщень.</p>
-          </header>
-          <button class="primary-button" type="button">
-            Редагувати профіль
-          </button>
-        </div>
-      </section>
     </main>
     <footer class="site-footer">
       <div class="page-container footer-grid">
@@ -114,10 +107,10 @@
           >FastFix</a
         >
         <nav aria-label="Навігація у підвалі">
-          <a href="index.html">Головна</a><a href="technology.html">Техніка</a
-          ><a href="calculator.html">Калькулятор</a
-          ><a href="request.html">Оформлення заявки</a
+          <a href="index.html">Головна</a><a href="request.html">Оформлення заявки</a
+          ><a href="technology.html">Техніка</a
           ><a href="account.html">Особистий кабінет</a
+          ><a href="calculator.html">Калькулятор</a
           ><a href="about.html">Про нас</a>
         </nav>
       </div>

@@ -49,7 +49,7 @@ test("invalid submit focuses first invalid control", () => {
   assert.equal(form.elements.consent.getAttribute("aria-invalid"), "true");
 });
 
-test("valid submit resets form, opens modal, and Escape closes it", () => {
+test("valid submit preserves form, opens modal, and Escape closes it", () => {
   const dom = createPage();
   const { document } = dom.window;
   const form = document.querySelector("#feedback-form");
@@ -62,12 +62,31 @@ test("valid submit resets form, opens modal, and Escape closes it", () => {
   form.elements.consent.checked = true;
   submit(dom, form);
 
-  assert.equal(form.elements.name.value, "");
-  assert.equal(form.elements.consent.checked, false);
+  assert.equal(form.elements.name.value, "Олена");
+  assert.equal(form.elements.consent.checked, true);
   assert.equal(modal.hidden, false);
   assert.equal(document.body.classList.contains("modal-open"), true);
 
   modal.dispatchEvent(new dom.window.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
   assert.equal(modal.hidden, true);
   assert.equal(document.body.classList.contains("modal-open"), false);
+});
+
+test("clear button resets all fields and validation states", () => {
+  const dom = createPage();
+  const { document } = dom.window;
+  const form = document.querySelector("#feedback-form");
+
+  form.elements.name.value = "Олена";
+  form.elements.email.value = "olena@example.com";
+  form.elements.consent.checked = true;
+  form.elements.name.dispatchEvent(new dom.window.Event("blur"));
+  document.querySelector("[data-feedback-clear]").click();
+
+  assert.equal(form.elements.name.value, "");
+  assert.equal(form.elements.email.value, "");
+  assert.equal(form.elements.consent.checked, false);
+  assert.equal(form.elements.name.getAttribute("aria-invalid"), "false");
+  assert.equal(form.elements.name.closest(".form-field").classList.contains("is-success"), false);
+  assert.equal(document.activeElement, form.elements.name);
 });
