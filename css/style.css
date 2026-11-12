@@ -430,7 +430,8 @@ main a:has(> span[aria-hidden="true"]):active {
 }
 
 .form-field.is-error input:not([type="checkbox"]),
-.form-field.is-error textarea {
+.form-field.is-error textarea,
+.form-field.is-error select {
   border-color: #dc2626;
   box-shadow: 0 0 0 3px rgb(220 38 38 / 0.12);
 }
@@ -441,7 +442,8 @@ main a:has(> span[aria-hidden="true"]):active {
 }
 
 .form-field.is-success input:not([type="checkbox"]),
-.form-field.is-success textarea {
+.form-field.is-success textarea,
+.form-field.is-success select {
   border-color: #16a34a;
   box-shadow: 0 0 0 3px rgb(22 163 74 / 0.1);
 }

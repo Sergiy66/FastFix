@@ -64,12 +64,4 @@ document.addEventListener("DOMContentLoaded", () => {
       .querySelector(".estimate")
       ?.scrollIntoView({ behavior: "smooth", block: "center" });
   });
-  const request = document.querySelector("#request-form");
-  request?.addEventListener("submit", (event) => {
-    event.preventDefault();
-    if (!request.reportValidity()) return;
-    request.querySelector(".form-status").textContent =
-      "Демонстраційна заявка перевірена. Для надсилання потрібен сервер.";
-  });
-
 });

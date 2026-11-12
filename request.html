@@ -54,44 +54,47 @@
             <p>Заповни форму, щоб ми могли уточнити деталі ремонту.</p>
           </header>
           <div class="split-layout">
-            <form id="request-form" class="panel form-stack">
-              <label
-                >Ваше ім&rsquo;я<input
-                  required
-                  name="name"
-                  type="text"
-                  autocomplete="name"
-                  placeholder="Введіть ім&rsquo;я" /></label
-              ><label
-                >Номер телефону<input
-                  required
-                  name="phone"
-                  type="tel"
-                  pattern="[+0-9 ()-]{10,}"
-                  placeholder="+380 XX XXX XX XX" /></label
-              ><label
-                >Email<input
-                  required
-                  name="email"
-                  type="email"
-                  placeholder="example@mail.com" /></label
-              ><label
-                >Пристрій<input
-                  required
-                  name="device"
-                  type="text"
-                  placeholder="Смартфон — модель" /></label
-              ><label
-                >Спосіб передачі<select required>
-                  <option>Самостійно</option>
-                  <option>Кур&rsquo;єр</option>
-                  <option>Майстер</option>
-                </select></label
-              ><label>Зручний день<input required type="date" /></label
-              ><label class="check"
-                ><input required type="checkbox" /> Погоджуюся з обробкою
-                персональних даних</label
-              ><button class="primary-button" type="submit">
+            <form id="request-form" class="panel form-stack" novalidate>
+              <div class="form-field">
+                <label for="request-name">Ваше ім&rsquo;я</label>
+                <input id="request-name" required name="name" type="text" autocomplete="name" minlength="2" maxlength="50" placeholder="Введіть ім&rsquo;я" aria-describedby="request-name-error" aria-invalid="false" />
+                <p id="request-name-error" class="field-error" aria-live="polite"></p>
+              </div>
+              <div class="form-field">
+                <label for="request-phone">Номер телефону</label>
+                <input id="request-phone" required name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="18" placeholder="+380 XX XXX XX XX" aria-describedby="request-phone-error" aria-invalid="false" />
+                <p id="request-phone-error" class="field-error" aria-live="polite"></p>
+              </div>
+              <div class="form-field">
+                <label for="request-email">Email</label>
+                <input id="request-email" required name="email" type="email" autocomplete="email" maxlength="254" placeholder="example@mail.com" aria-describedby="request-email-error" aria-invalid="false" />
+                <p id="request-email-error" class="field-error" aria-live="polite"></p>
+              </div>
+              <div class="form-field">
+                <label for="request-device">Пристрій</label>
+                <input id="request-device" required name="device" type="text" minlength="3" maxlength="80" placeholder="Смартфон — модель" aria-describedby="request-device-error" aria-invalid="false" />
+                <p id="request-device-error" class="field-error" aria-live="polite"></p>
+              </div>
+              <div class="form-field">
+                <label for="request-delivery">Спосіб передачі</label>
+                <select id="request-delivery" required name="delivery" aria-describedby="request-delivery-error" aria-invalid="false">
+                  <option value="">Оберіть спосіб</option>
+                  <option value="self">Самостійно</option>
+                  <option value="courier">Кур&rsquo;єр</option>
+                  <option value="master">Майстер</option>
+                </select>
+                <p id="request-delivery-error" class="field-error" aria-live="polite"></p>
+              </div>
+              <div class="form-field">
+                <label for="request-date">Зручний день</label>
+                <input id="request-date" required name="date" type="date" aria-describedby="request-date-error" aria-invalid="false" />
+                <p id="request-date-error" class="field-error" aria-live="polite"></p>
+              </div>
+              <div class="form-field">
+                <label class="check" for="request-consent"><input id="request-consent" required name="consent" type="checkbox" aria-describedby="request-consent-error" aria-invalid="false" /> Погоджуюся з обробкою персональних даних</label>
+                <p id="request-consent-error" class="field-error" aria-live="polite"></p>
+              </div>
+              <button class="primary-button" type="submit">
                 Підтвердити заявку <span>›</span>
               </button>
               <p class="form-status" aria-live="polite"></p>
@@ -282,6 +285,7 @@
       </div>
     </div>
     <script src="js/app.js"></script>
+    <script src="js/request-form.js"></script>
     <script src="js/feedback-form.js"></script>
   </body>
 </html>
