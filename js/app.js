@@ -51,6 +51,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  if (typeof Fancybox !== "undefined") {
+    Fancybox.bind('[data-fancybox="fastfix-team"]', {
+      Carousel: { transition: "fade" },
+      Images: { zoom: true },
+      showClass: "f-fadeIn",
+      hideClass: "f-fadeOut",
+      wheel: "zoom",
+      contentClick: "toggleZoom",
+      dragToClose: true,
+    });
+  }
+
   const youtubePlayer = document.querySelector("[data-youtube-player]");
   const localVideoNote = document.querySelector("[data-video-local-note]");
 
