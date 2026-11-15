@@ -30,6 +30,27 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   setTheme(storedTheme === "dark" || storedTheme === "light" ? storedTheme : "light");
 
+  const serviceSlider = document.querySelector(".service-swiper");
+  if (serviceSlider && typeof Swiper !== "undefined") {
+    new Swiper(serviceSlider, {
+      loop: true,
+      spaceBetween: 16,
+      slidesPerView: 1,
+      autoplay: { delay: 3500, disableOnInteraction: false, pauseOnMouseEnter: true },
+      navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+      pagination: { el: ".swiper-pagination", clickable: true },
+      a11y: {
+        prevSlideMessage: "Попередня послуга",
+        nextSlideMessage: "Наступна послуга",
+        paginationBulletMessage: "Перейти до послуги {{index}}",
+      },
+      breakpoints: {
+        640: { slidesPerView: 2, spaceBetween: 20 },
+        1024: { slidesPerView: 3, spaceBetween: 24 },
+      },
+    });
+  }
+
   const youtubePlayer = document.querySelector("[data-youtube-player]");
   const localVideoNote = document.querySelector("[data-video-local-note]");
 

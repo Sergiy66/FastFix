@@ -10,7 +10,9 @@
     <title>FastFix — онлайн-оцінка ремонту</title>
     <link rel="icon" href="assets/icons/logo-bolt.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="css/tailwind.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
     <script src="js/app.js" defer></script>
   </head>
   <body
@@ -449,6 +451,28 @@
               <h3>Інша техніка</h3>
               <p>За запитом.</p>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="service-slider-section pt-4 md:pt-8" aria-labelledby="service-slider-title">
+        <div class="page-container">
+          <header class="section-heading">
+            <h2 id="service-slider-title">Популярні послуги FastFix</h2>
+            <p>Переглядай напрямки ремонту та обирай потрібну послугу.</p>
+          </header>
+          <div class="swiper service-swiper" aria-label="Популярні послуги FastFix">
+            <div class="swiper-wrapper">
+              <article class="swiper-slide service-slide"><span class="icon-box"><img src="assets/icons/icon_phone.svg" alt="" /></span><h3>Ремонт смартфонів</h3><p>Дисплей, батарея, заряджання та діагностика.</p><a href="request.html">Оформити заявку <span aria-hidden="true">›</span></a></article>
+              <article class="swiper-slide service-slide"><span class="icon-box"><img src="assets/icons/icon_laptop.svg" alt="" /></span><h3>Ремонт ноутбуків</h3><p>Живлення, охолодження, клавіатура та екран.</p><a href="request.html">Оформити заявку <span aria-hidden="true">›</span></a></article>
+              <article class="swiper-slide service-slide"><span class="icon-box"><img src="assets/icons/icon_computer.svg" alt="" /></span><h3>Ремонт комп’ютерів</h3><p>Діагностика, комплектуючі та налаштування ПК.</p><a href="request.html">Оформити заявку <span aria-hidden="true">›</span></a></article>
+              <article class="swiper-slide service-slide"><span class="icon-box"><img src="assets/icons/icon_headphones.svg" alt="" /></span><h3>Ремонт навушників</h3><p>Звук, акумулятор, роз’єми та бездротовий зв’язок.</p><a href="request.html">Оформити заявку <span aria-hidden="true">›</span></a></article>
+              <article class="swiper-slide service-slide"><span class="icon-box"><img src="assets/icons/icon_household.svg" alt="" /></span><h3>Побутова техніка</h3><p>Діагностика й ремонт малих домашніх приладів.</p><a href="request.html">Оформити заявку <span aria-hidden="true">›</span></a></article>
+              <article class="swiper-slide service-slide"><span class="icon-box"><img src="assets/icons/icon_other.svg" alt="" /></span><h3>Інша техніка</h3><p>Індивідуальна оцінка нестандартних пристроїв.</p><a href="request.html">Оформити заявку <span aria-hidden="true">›</span></a></article>
+            </div>
+            <button class="swiper-button-prev" type="button" aria-label="Попередня послуга"></button>
+            <button class="swiper-button-next" type="button" aria-label="Наступна послуга"></button>
+            <div class="swiper-pagination"></div>
           </div>
         </div>
       </section>
