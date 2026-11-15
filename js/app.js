@@ -63,6 +63,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const typedHero = document.querySelector("[data-typed-hero]");
+  const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+  if (typedHero && typeof Typed !== "undefined" && !reduceMotion) {
+    new Typed(typedHero, {
+      strings: [
+        "ОНЛАЙН-ОЦІНКА РЕМОНТУ",
+        "ЧЕСНА ЦІНА БЕЗ СЮРПРИЗІВ",
+        "ШВИДКИЙ СЕРВІС FASTFIX",
+      ],
+      typeSpeed: 42,
+      backSpeed: 20,
+      startDelay: 700,
+      backDelay: 2400,
+      smartBackspace: true,
+      loop: true,
+      showCursor: false,
+    });
+  }
+
   const youtubePlayer = document.querySelector("[data-youtube-player]");
   const localVideoNote = document.querySelector("[data-video-local-note]");
 

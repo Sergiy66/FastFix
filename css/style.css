@@ -30,6 +30,11 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+[data-typed-hero] {
+  min-width: 190px;
+  white-space: nowrap;
+}
 .logo-mark {
   position: relative;
   display: inline-block;
