@@ -7,6 +7,7 @@ const { JSDOM } = require("jsdom");
 const root = path.resolve(__dirname, "..");
 const html = fs.readFileSync(path.join(root, "about.html"), "utf8");
 const script = fs.readFileSync(path.join(root, "js", "app.js"), "utf8");
+const css = fs.readFileSync(path.join(root, "css", "style.css"), "utf8");
 
 test("loads Fancybox v5 from CDN", () => {
   assert.match(html, /cdn\.jsdelivr\.net\/npm\/@fancyapps\/ui@5\.0\/dist\/fancybox\/fancybox\.css/);
@@ -26,4 +27,6 @@ test("groups local FastFix images with transition and zoom", () => {
   assert.match(script, /transition:\s*"fade"/);
   assert.match(script, /zoom:\s*true/);
   assert.match(script, /contentClick:\s*"toggleZoom"/);
+  assert.match(css, /aspect-ratio:\s*3\s*\/\s*4/);
+  assert.match(css, /object-fit:\s*contain/);
 });

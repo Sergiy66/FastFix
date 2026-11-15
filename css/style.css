@@ -318,6 +318,9 @@ main a:has(> span[aria-hidden="true"]):active {
 }
 
 .site-header .mobile-page-intro {
+  position: absolute;
+  inset-inline: 0;
+  top: 64px;
   padding-top: 8px;
 }
 
@@ -547,6 +550,7 @@ body.modal-open {
 
   .site-header .mobile-page-intro {
     display: block;
+    top: 74px;
     padding-top: 8px;
   }
 
@@ -835,21 +839,23 @@ html[data-theme] .border-fastfix-border {
   outline-offset: 2px;
 }
 
-#calculator-form + .estimate > p:first-of-type,
-#calculator-form + .estimate > strong {
+.estimate-price {
   width: 100%;
-  margin: 0;
-  padding-inline: 20px;
+  padding: 20px;
+  border-radius: 8px;
   background: var(--ff-accent-subtle);
 }
 
-#calculator-form + .estimate > p:first-of-type {
-  padding-top: 20px;
+.estimate-price p,
+.estimate-price strong {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-#calculator-form + .estimate > strong {
-  padding-top: 8px;
-  padding-bottom: 20px;
+.estimate-price strong {
+  margin-top: 8px;
 }
 
 .faq,
@@ -1055,6 +1061,11 @@ html[data-theme] .focus\:border-fastfix-cyan:focus {
 }
 
 .team-gallery-link img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  background: var(--ff-surface-subtle);
   transition: transform 260ms ease;
 }
 

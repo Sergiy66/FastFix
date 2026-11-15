@@ -27,3 +27,12 @@ test("all submitted form controls have names and required constraints", () => {
     }
   }
 });
+
+test("calculator groups estimate label and amount", () => {
+  const dom = new JSDOM(fs.readFileSync(path.join(root, "calculator.html"), "utf8"));
+  const price = dom.window.document.querySelector(".estimate-price");
+
+  assert.ok(price);
+  assert.ok(price.querySelector("p"));
+  assert.ok(price.querySelector("strong"));
+});
