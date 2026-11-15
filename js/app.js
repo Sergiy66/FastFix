@@ -1,9 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.documentElement;
   const storedTheme = localStorage.getItem("fastfix-theme");
-  const preferredTheme = window.matchMedia?.("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
   const setTheme = (theme) => {
     root.dataset.theme = theme;
     const toggle = document.querySelector("[data-theme-toggle]");
@@ -31,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
       setTheme(theme);
     });
   }
-  setTheme(storedTheme === "dark" || storedTheme === "light" ? storedTheme : preferredTheme);
+  setTheme(storedTheme === "dark" || storedTheme === "light" ? storedTheme : "light");
 
   const youtubePlayer = document.querySelector("[data-youtube-player]");
   const localVideoNote = document.querySelector("[data-video-local-note]");

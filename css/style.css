@@ -528,11 +528,11 @@ body.modal-open {
 
 @media (min-width: 768px) {
   .site-header {
-    height: 74px;
+    height: 186px;
   }
 
   .page-main {
-    padding-top: 74px;
+    padding-top: 186px;
   }
 
   .site-header .header-bar .logo {
@@ -545,24 +545,20 @@ body.modal-open {
     font-size: 22px;
   }
 
-  .page-main > .page-intro {
-    position: static;
-    width: calc(100% - 64px);
-    height: auto;
-    margin: 0 auto;
-    padding-top: 34px;
-    overflow: visible;
-    clip: auto;
-    white-space: normal;
-    color: #1f2937;
-  }
-
   .site-header .mobile-page-intro {
-    display: none;
+    display: block;
+    padding-top: 8px;
   }
 
-  .page-main > .page-intro p {
-    color: #64748b;
+  .site-header .mobile-page-intro strong {
+    font-size: 37px;
+    line-height: normal;
+  }
+
+  .site-header .mobile-page-intro p {
+    margin-top: 8px;
+    color: var(--ff-text-on-inverse);
+    font-size: 15px;
   }
 
   .site-footer {
@@ -581,10 +577,6 @@ body.modal-open {
 }
 
 @media (min-width: 1280px) {
-  .page-main > .page-intro {
-    width: calc(100% - 120px);
-  }
-
   .site-header .desktop-nav {
     font-size: 13px;
   }
@@ -636,7 +628,7 @@ body.modal-open {
   --ff-cyan-subtle: #e7f7fc;
   --ff-switch-surface: #18263b;
   --ff-switch-border: #536781;
-  --ff-shadow: 0 8px 28px rgb(15 23 42 / 0.08);
+  --ff-shadow: 0 1px 3px rgb(15 23 42 / 0.08);
 }
 
 :root[data-theme="dark"] {
@@ -655,7 +647,7 @@ body.modal-open {
   --ff-cyan-subtle: #143541;
   --ff-switch-surface: #23334b;
   --ff-switch-border: #6e83a0;
-  --ff-shadow: 0 10px 32px rgb(0 0 0 / 0.28);
+  --ff-shadow: 0 1px 3px rgb(0 0 0 / 0.2);
 }
 
 body {
@@ -669,14 +661,23 @@ html[data-theme] body.bg-fastfix-surface {
   background-color: var(--ff-bg);
 }
 
+html[data-theme] body[class*="bg-[#F3F6FA]"] {
+  color: var(--ff-text);
+  background-color: var(--ff-bg);
+}
+
 html[data-theme] body.text-fastfix-text,
-html[data-theme] .text-fastfix-text {
+html[data-theme] .text-fastfix-text,
+html[data-theme] .text-\[\#1F2937\] {
   color: var(--ff-text);
 }
 
-html[data-theme] .text-fastfix-muted,
-html[data-theme] [class*="text-[#5B6B82]"],
-html[data-theme] [class*="text-[#667B98]"] {
+html[data-theme] .text-fastfix-muted {
+  color: var(--ff-muted);
+}
+
+html[data-theme] header[class*="[&_p]:text-[#5B6B82]"] p,
+html[data-theme] header[class*="[&_p]:text-[#667B98]"] p {
   color: var(--ff-muted);
 }
 
@@ -684,6 +685,33 @@ html[data-theme] [class*="text-[#667B98]"] {
 body > header {
   color: var(--ff-text-inverse);
   background-color: var(--ff-surface-inverse);
+}
+
+html[data-theme] .bg-fastfix-dark,
+html[data-theme] .bg-\[\#0B1220\] {
+  background-color: var(--ff-surface-inverse);
+}
+
+html[data-theme] .bg-\[\#F3F6FA\] {
+  background-color: var(--ff-bg);
+}
+
+html[data-theme] .bg-\[\#EDF4FF\] {
+  background-color: var(--ff-accent-subtle);
+}
+
+html[data-theme] .bg-\[\#FF6B0B\],
+html[data-theme] .bg-\[\#F97316\] {
+  background-color: var(--ff-action-primary);
+}
+
+html[data-theme] .text-\[\#C9D4E3\],
+html[data-theme] .text-\[\#D2DCE8\] {
+  color: var(--ff-text-on-inverse);
+}
+
+html[data-theme] .border-\[\#D2DCE8\] {
+  border-color: var(--ff-border);
 }
 
 .site-footer,
@@ -694,6 +722,15 @@ body > header {
 
 .site-footer {
   border-top: 1px solid var(--ff-surface-inverse);
+}
+
+.cta-panel p {
+  color: var(--ff-text-on-inverse);
+}
+
+.site-footer a,
+.site-footer .logo {
+  color: var(--ff-text-inverse);
 }
 
 .theme-toggle {
@@ -739,6 +776,89 @@ main article,
   box-shadow: var(--ff-shadow);
 }
 
+html[data-theme] .bg-white {
+  background-color: var(--ff-surface);
+}
+
+html[data-theme] .border-fastfix-border {
+  border-color: var(--ff-border);
+}
+
+#calculator-form,
+#request-form,
+#feedback-form {
+  background-color: var(--ff-surface-subtle);
+}
+
+.form-stack > .primary-button {
+  width: 253px;
+  max-width: 100%;
+  align-self: flex-start;
+}
+
+.estimate .primary-button {
+  width: 100%;
+  align-self: stretch;
+}
+
+.file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.file-dropzone {
+  display: flex;
+  min-height: 110px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid var(--ff-cyan);
+  border-radius: 6px;
+  color: var(--ff-primary);
+  background: var(--ff-surface);
+  cursor: pointer;
+}
+
+.file-dropzone img {
+  width: 24px;
+  height: 24px;
+}
+
+.file-input:focus-visible + .file-dropzone {
+  outline: 2px solid var(--ff-cyan);
+  outline-offset: 2px;
+}
+
+#calculator-form + .estimate > p:first-of-type,
+#calculator-form + .estimate > strong {
+  width: 100%;
+  margin: 0;
+  padding-inline: 20px;
+  background: var(--ff-accent-subtle);
+}
+
+#calculator-form + .estimate > p:first-of-type {
+  padding-top: 20px;
+}
+
+#calculator-form + .estimate > strong {
+  padding-top: 8px;
+  padding-bottom: 20px;
+}
+
+.faq,
+.history,
+.comparison-card,
+.repair-card {
+  background-color: var(--ff-surface-subtle);
+}
+
 .page-card p,
 .section-heading p,
 .page-main > .page-intro p,
@@ -760,6 +880,11 @@ main article > span:has(img) {
   background-color: var(--ff-accent-subtle);
 }
 
+.icon-box,
+main article > span:has(img) {
+  color: var(--ff-primary);
+}
+
 .form-stack input,
 .form-stack select,
 .form-stack textarea,
@@ -770,6 +895,11 @@ main article > span:has(img) {
   color: var(--ff-text);
   border-color: var(--ff-border);
   background-color: var(--ff-surface);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--ff-muted);
 }
 
 .secondary-button {
@@ -791,26 +921,26 @@ main button[type="submit"] {
   color: var(--ff-primary);
 }
 
-:root[data-theme="dark"] .bg-white,
-:root[data-theme="dark"] [class*="bg-white"] {
-  background-color: var(--ff-surface);
-}
-
-:root[data-theme="dark"] .text-fastfix-text,
-:root[data-theme="dark"] .text-fastfix-primary {
+html[data-theme] .text-fastfix-primary {
   color: var(--ff-primary);
 }
 
-:root[data-theme="dark"] .text-fastfix-muted,
-:root[data-theme="dark"] [class*="text-[#5B6B82]"],
-:root[data-theme="dark"] [class*="text-[#667B98]"] {
-  color: var(--ff-muted);
+html[data-theme] .bg-fastfix-cyan {
+  background-color: var(--ff-cyan);
+}
+
+html[data-theme] .focus\:border-fastfix-cyan:focus {
+  border-color: var(--ff-cyan);
 }
 
 @media (min-width: 1024px) {
   .theme-toggle {
+    width: 108px;
+    height: 38px;
+    flex-basis: 108px;
     margin-left: 8px;
     margin-right: 0;
+    font-size: 13px;
   }
 }
 

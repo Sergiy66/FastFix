@@ -110,4 +110,5 @@ test("home page header exposes the theme-switch mount point", () => {
   const dom = new JSDOM(html);
 
   assert.ok(dom.window.document.querySelector("header .header-bar"));
+  assert.ok(dom.window.document.querySelector("header .mobile-menu"));
 });
