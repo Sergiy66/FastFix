@@ -103,3 +103,11 @@ test("theme switch matches Figma labels and persists the mode", () => {
   assert.equal(toggle.textContent, "Світла тема");
   assert.equal(localStorage.getItem("fastfix-theme"), "dark");
 });
+
+test("home page header exposes the theme-switch mount point", () => {
+  const root = path.resolve(__dirname, "..");
+  const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
+  const dom = new JSDOM(html);
+
+  assert.ok(dom.window.document.querySelector("header .header-bar"));
+});

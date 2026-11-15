@@ -664,6 +664,22 @@ body {
   transition: color 180ms ease, background-color 180ms ease;
 }
 
+html[data-theme] body.bg-fastfix-surface {
+  color: var(--ff-text);
+  background-color: var(--ff-bg);
+}
+
+html[data-theme] body.text-fastfix-text,
+html[data-theme] .text-fastfix-text {
+  color: var(--ff-text);
+}
+
+html[data-theme] .text-fastfix-muted,
+html[data-theme] [class*="text-[#5B6B82]"],
+html[data-theme] [class*="text-[#667B98]"] {
+  color: var(--ff-muted);
+}
+
 .site-header,
 body > header {
   color: var(--ff-text-inverse);
