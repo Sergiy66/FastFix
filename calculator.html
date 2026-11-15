@@ -71,15 +71,20 @@
                   required
                   name="model"
                   type="text"
+                  minlength="2"
+                  maxlength="80"
                   placeholder="Оберіть модель" /></label
               ><label
                 >Завантажте фотографію<input
                   type="file"
+                  name="photo"
                   accept="image/*" /></label
               ><label
                 >Опис несправності<textarea
                   required
                   name="issue"
+                  minlength="10"
+                  maxlength="1000"
                   placeholder="Наприклад: тріснув екран, не вмикається..."
                 ></textarea></label
               ><button class="primary-button" type="submit">

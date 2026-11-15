@@ -1,4 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const root = document.documentElement;
+  const storedTheme = localStorage.getItem("fastfix-theme");
+  const preferredTheme = window.matchMedia?.("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+  const setTheme = (theme) => {
+    root.dataset.theme = theme;
+    const toggle = document.querySelector("[data-theme-toggle]");
+    if (toggle) {
+      toggle.setAttribute("aria-pressed", String(theme === "dark"));
+      toggle.setAttribute(
+        "aria-label",
+        theme === "dark" ? "Увімкнути світлу тему" : "Увімкнути темну тему",
+      );
+      toggle.querySelector("span").textContent = theme === "dark" ? "☀" : "☾";
+    }
+  };
+
+  const headerBar = document.querySelector(".header-bar");
+  if (headerBar) {
+    const toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "theme-toggle";
+    toggle.dataset.themeToggle = "";
+    toggle.innerHTML = '<span aria-hidden="true"></span>';
+    headerBar.insertBefore(toggle, headerBar.querySelector(".mobile-menu"));
+    toggle.addEventListener("click", () => {
+      const theme = root.dataset.theme === "dark" ? "light" : "dark";
+      localStorage.setItem("fastfix-theme", theme);
+      setTheme(theme);
+    });
+  }
+  setTheme(storedTheme === "dark" || storedTheme === "light" ? storedTheme : preferredTheme);
+
   const youtubePlayer = document.querySelector("[data-youtube-player]");
   const localVideoNote = document.querySelector("[data-video-local-note]");
 

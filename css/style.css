@@ -615,6 +615,170 @@ body.modal-open {
   }
 }
 
+/* Unified FastFix themes. Header stays dark in both modes. */
+:root {
+  color-scheme: light;
+  --ff-bg: #f6f8fc;
+  --ff-surface: #ffffff;
+  --ff-surface-soft: #edf4ff;
+  --ff-text: #172033;
+  --ff-muted: #64748b;
+  --ff-border: #d9e2ec;
+  --ff-primary: #1e3a8a;
+  --ff-header: #0b1220;
+  --ff-shadow: 0 8px 28px rgb(15 23 42 / 0.08);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ff-bg: #0b1220;
+  --ff-surface: #111c2f;
+  --ff-surface-soft: #172640;
+  --ff-text: #e7edf7;
+  --ff-muted: #a8b6ca;
+  --ff-border: #2b3b55;
+  --ff-primary: #7aa2ff;
+  --ff-shadow: 0 10px 32px rgb(0 0 0 / 0.28);
+}
+
+body {
+  color: var(--ff-text);
+  background: var(--ff-bg);
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+.site-header,
+body > header {
+  color: #fff;
+  background-color: var(--ff-header);
+}
+
+.site-footer,
+.cta-panel,
+#landing-calculator {
+  color: var(--ff-text);
+  border-color: var(--ff-border);
+  background-color: var(--ff-surface);
+}
+
+.site-footer {
+  border-top: 1px solid var(--ff-border);
+}
+
+:root[data-theme="dark"] .site-footer,
+:root[data-theme="dark"] .cta-panel {
+  color: #fff;
+  background-color: var(--ff-header);
+}
+
+.theme-toggle {
+  display: inline-grid;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  place-items: center;
+  margin-left: auto;
+  margin-right: 10px;
+  border: 1px solid #40516d;
+  border-radius: 999px;
+  color: #fff;
+  background: #172640;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  border-color: #06b6d4;
+  outline: 2px solid transparent;
+  background: #223553;
+}
+
+.page-card,
+.panel,
+.stats article,
+.history,
+.faq,
+.card,
+.repair-card,
+.comparison-card,
+main article,
+.feedback-modal-card,
+#landing-estimate {
+  color: var(--ff-text);
+  border-color: var(--ff-border);
+  background-color: var(--ff-surface);
+  box-shadow: var(--ff-shadow);
+}
+
+.page-card p,
+.section-heading p,
+.page-main > .page-intro p,
+.estimate p,
+.estimate small,
+.feedback-modal-card p,
+.field-hint,
+main article p {
+  color: var(--ff-muted);
+}
+
+.page-main > .page-intro {
+  color: var(--ff-text);
+}
+
+.page-card > .icon-box,
+.repair-item .status,
+main article > span:has(img) {
+  background-color: var(--ff-surface-soft);
+}
+
+.form-stack input,
+.form-stack select,
+.form-stack textarea,
+.filter-form input,
+.filter-form select,
+#landing-calculator input,
+#landing-calculator select {
+  color: var(--ff-text);
+  border-color: var(--ff-border);
+  background-color: var(--ff-surface);
+}
+
+.secondary-button {
+  color: var(--ff-primary);
+  border-color: var(--ff-primary);
+  background: var(--ff-surface);
+}
+
+.estimate strong,
+.stats strong,
+.repair-item .status {
+  color: var(--ff-primary);
+}
+
+:root[data-theme="dark"] .bg-white,
+:root[data-theme="dark"] [class*="bg-white"] {
+  background-color: var(--ff-surface);
+}
+
+:root[data-theme="dark"] .text-fastfix-text,
+:root[data-theme="dark"] .text-fastfix-primary {
+  color: var(--ff-text);
+}
+
+:root[data-theme="dark"] .text-fastfix-muted,
+:root[data-theme="dark"] [class*="text-[#5B6B82]"],
+:root[data-theme="dark"] [class*="text-[#667B98]"] {
+  color: var(--ff-muted);
+}
+
+@media (min-width: 1024px) {
+  .theme-toggle {
+    margin-left: 8px;
+    margin-right: 0;
+  }
+}
+
 @media (min-width: 768px) {
   .logo-mark {
     width: 40px;

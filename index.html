@@ -224,6 +224,7 @@
               >Категорія пристрою<select
                 class="h-11 w-full rounded-md border border-[#D2DCE8] bg-white px-3.5 text-fastfix-muted placeholder:text-fastfix-muted focus:border-fastfix-cyan focus:outline-none focus:ring-2 focus:ring-fastfix-cyan/40 md:h-[46px] md:border-0"
                 name="category"
+                required
               >
                 <option value="phone">Смартфон</option>
                 <option value="laptop">Ноутбук</option>
@@ -235,6 +236,7 @@
               >Бренд<select
                 class="h-11 w-full rounded-md border border-[#D2DCE8] bg-white px-3.5 text-fastfix-muted placeholder:text-fastfix-muted focus:border-fastfix-cyan focus:outline-none focus:ring-2 focus:ring-fastfix-cyan/40 md:h-[46px] md:border-0"
                 name="brand"
+                required
               >
                 <option value="">Оберіть виробника</option>
                 <option>Apple</option>
@@ -248,6 +250,8 @@
                 name="model"
                 type="text"
                 required
+                minlength="2"
+                maxlength="80"
                 placeholder="Оберіть модель"
             /></label>
             <button
