@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "aria-label",
         theme === "dark" ? "Увімкнути світлу тему" : "Увімкнути темну тему",
       );
-      toggle.querySelector("span").textContent = theme === "dark" ? "☀" : "☾";
+      toggle.querySelector("span").textContent = theme === "dark" ? "Світла тема" : "Темна тема";
     }
   };
 

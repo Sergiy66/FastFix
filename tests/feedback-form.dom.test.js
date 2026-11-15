@@ -90,3 +90,16 @@ test("clear button resets all fields and validation states", () => {
   assert.equal(form.elements.name.closest(".form-field").classList.contains("is-success"), false);
   assert.equal(document.activeElement, form.elements.name);
 });
+
+test("theme switch matches Figma labels and persists the mode", () => {
+  const dom = createPage();
+  const { document, localStorage } = dom.window;
+  const toggle = document.querySelector("[data-theme-toggle]");
+
+  assert.ok(toggle);
+  assert.equal(toggle.textContent, "Темна тема");
+  toggle.click();
+  assert.equal(document.documentElement.dataset.theme, "dark");
+  assert.equal(toggle.textContent, "Світла тема");
+  assert.equal(localStorage.getItem("fastfix-theme"), "dark");
+});
