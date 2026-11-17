@@ -108,7 +108,7 @@ for (const size of sizes) {
               fancybox: location.pathname.endsWith('/about.html') ? typeof Fancybox : 'n/a'
             },
             swiperReady: !location.pathname.endsWith('/index.html') || document.querySelector('.service-swiper')?.classList.contains('swiper-initialized'),
-            typedStable: !location.pathname.endsWith('/index.html') || document.querySelector('[data-typed-hero]')?.getBoundingClientRect().height >= 42,
+            typedStable: !location.pathname.endsWith('/index.html') || document.querySelector('[data-typed-hero]')?.getBoundingClientRect().height >= 24,
             fancyboxGroup: !location.pathname.endsWith('/about.html') || document.querySelectorAll('[data-fancybox="fastfix-team"]').length >= 3
           };
         })()`

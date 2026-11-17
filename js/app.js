@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     new Typed(typedHero, {
       strings: [
         "ОНЛАЙН-ОЦІНКА РЕМОНТУ",
-        "ЧЕСНА ЦІНА БЕЗ СЮРПРИЗІВ",
+        "ЧЕСНА ЦІНА РЕМОНТУ",
         "ШВИДКИЙ СЕРВІС FASTFIX",
       ],
       typeSpeed: 42,

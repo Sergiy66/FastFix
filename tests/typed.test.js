@@ -15,15 +15,16 @@ test("loads Typed.js through a pinned CDN", () => {
 
 test("Hero has FastFix slogans and reduced-motion protection", () => {
   const dom = new JSDOM(html);
-  const target = dom.window.document.querySelector(".hero-image [data-typed-hero]");
+  const target = dom.window.document.querySelector("[data-typed-hero]");
   assert.ok(target);
+  assert.equal(target.closest(".hero-image"), null);
   assert.match(script, /ОНЛАЙН-ОЦІНКА РЕМОНТУ/);
-  assert.match(script, /ЧЕСНА ЦІНА БЕЗ СЮРПРИЗІВ/);
+  assert.match(script, /ЧЕСНА ЦІНА РЕМОНТУ/);
   assert.match(script, /ШВИДКИЙ СЕРВІС FASTFIX/);
   assert.match(script, /prefers-reduced-motion:\s*reduce/);
   assert.match(script, /typeSpeed:\s*42/);
   assert.match(script, /backDelay:\s*2400/);
   assert.match(script, /showCursor:\s*false/);
-  assert.match(css, /width:\s*min\(290px/);
-  assert.match(css, /min-height:\s*42px/);
+  assert.match(css, /width:\s*220px/);
+  assert.match(css, /min-height:\s*24px/);
 });
