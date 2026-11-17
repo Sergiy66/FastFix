@@ -23,13 +23,57 @@
   font-display: swap;
 }
 .hero-image {
-  position: relative;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   background-image:
-    linear-gradient(90deg, #0b1220 0%, transparent 40%),
+    linear-gradient(90deg, #0b1220 0%, rgb(11 18 32 / 0.94) 32%, rgb(11 18 32 / 0.38) 67%, transparent 100%),
     url("../assets/images/hero_bg.png");
-  background-position: center;
+  background-position: right center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.hero-stage {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 767px) {
+  .hero-stage,
+  .hero-content {
+    min-height: 520px;
+  }
+
+  .hero-content {
+    padding-top: 12px;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    background-image:
+      linear-gradient(90deg, rgb(11 18 32 / 0.97) 0%, rgb(11 18 32 / 0.82) 58%, rgb(11 18 32 / 0.34) 100%),
+      url("../assets/images/hero_bg.png");
+    background-position: 62% center;
+  }
+
+  .hero-cta {
+    margin-top: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-image {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 [data-typed-hero] {
